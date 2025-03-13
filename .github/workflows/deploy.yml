@@ -1,0 +1,21 @@
+name: Simple CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - staging
+      - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Deployment Script
+        run: echo "Deployment successful!"
+
